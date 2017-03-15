@@ -8,9 +8,9 @@
 			<generator class="identity" />
 		</id>
 
-		<property name="name" unique="true"/>
+		<property name="name"/>
 
-		<bag name="employees" inverse="true">
+		<bag name="employees" cascade="delete" inverse="true">
 			<key column="dept_id"/>
 			<one-to-many class="Employee"/>
 		</bag>

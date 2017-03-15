@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--many2one 实现one2one-->
+<hibernate-mapping package="com.zheng.domain">
+	<class name="QQZoom" table="t_qqzoom">
+		<id name="id">
+			<generator class="foreign">
+				<param name="property">qqNumber</param>
+			</generator>
+		</id>
+		<property name="name" column="name" type="string"/>
+
+		<one-to-one name="qqNumber" class="QQNumber" constrained="true" cascade="save-update"/>		
+		
+	</class>
+
+</hibernate-mapping>

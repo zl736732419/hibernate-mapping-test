@@ -19,12 +19,6 @@
             http://www.springframework.org/schema/jee
             http://www.springframework.org/schema/jee/spring-jee.xsd">
 
-    <bean id="jdbcTransactionManager"
-          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource">
-            <ref bean="ds" />
-        </property>
-    </bean>
     <bean id="transactionManager"
           class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />

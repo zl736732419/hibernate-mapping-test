@@ -1,30 +1,26 @@
 package com.zheng.domain;
 
-import com.google.common.collect.Lists;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import java.util.List;
-
 /**
- * one many
- * Created by Administrator on 2017/3/14.
+ * one one
+ * Created by Administrator on 2017/3/15.
  */
-public class Department {
+public class QQZoom {
     private Long id;
     private String name;
+    private QQNumber qqNumber;
 
-    private List<Employee> employees = Lists.newArrayList();
-    
-    public Department() {
+    public QQZoom() {
+        
     }
     
-    public Department(String name) {
+    public QQZoom(String name) {
         this.name = name;
     }
     
-
     public Long getId() {
         return id;
     }
@@ -41,25 +37,26 @@ public class Department {
         this.name = name;
     }
 
-    public List<Employee> getEmployees() {
-        return employees;
+    public QQNumber getQqNumber() {
+        return qqNumber;
     }
 
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
+    public void setQqNumber(QQNumber qqNumber) {
+        this.qqNumber = qqNumber;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if(null == obj) {
+        if (null == obj) {
             return false;
         }
 
-        if(!(obj instanceof Department)) {
+        if (!(obj instanceof QQZoom)) {
             return false;
         }
 
-        Department other = (Department) obj;
+        QQZoom other = (QQZoom) obj;
+
         return new EqualsBuilder().append(this.name, other.name).build();
     }
 
@@ -70,6 +67,6 @@ public class Department {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append(this.name).append("employee size", this.employees.size()).build();
+        return new ToStringBuilder(this).append(this.name).toString();
     }
 }

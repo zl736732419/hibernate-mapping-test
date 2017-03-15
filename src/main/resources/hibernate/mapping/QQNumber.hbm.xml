@@ -3,13 +3,12 @@
 		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.zheng.domain">
-	<class name="Employee" table="t_employee">
+	<class name="QQNumber" table="t_qqnumber">
 		<id name="id">
-			<generator class="identity" />
+			<generator class="identity"/>
 		</id>
-		<property name="name"/>
-		<property name="age" />
-		<many-to-one name="department" column="dept_id" cascade="save-update"/>
+		<property name="numbers" column="numbers" type="string"/>
+		<one-to-one name="qqZoom" class="QQZoom" cascade="all-delete-orphan"/>
 	</class>
 
 </hibernate-mapping>

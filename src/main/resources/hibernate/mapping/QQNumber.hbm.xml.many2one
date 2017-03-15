@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
 		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-
+<!--many2one 实现one2one-->
 <hibernate-mapping package="com.zheng.domain">
-	<class name="Employee" table="t_employee">
+	<class name="QQNumber" table="t_qqnumber">
 		<id name="id">
 			<generator class="identity" />
 		</id>
-		<property name="name"/>
-		<property name="age" />
-		<many-to-one name="department" column="dept_id" cascade="save-update"/>
+		<property name="numbers" column="numbers" type="string"/>
+
+		<many-to-one name="qqZoom" unique="true" cascade="all-delete-orphan" column="qqzoom_id"/>		
 	</class>
 
 </hibernate-mapping>

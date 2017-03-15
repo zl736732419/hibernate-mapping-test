@@ -18,9 +18,14 @@ public class EmployeeServiceTest extends BaseServiceTest {
         Employee gril = new Employee("小芳", 20);
         gril.setDepartment(department);
         employeeService.save(gril);
-        
+
         gril = new Employee("如花", 21);
         gril.setDepartment(department);
         employeeService.save(gril);
+    }
+    
+    @Test
+    public void delete() {
+        employeeService.delete(19L);
     }
 }

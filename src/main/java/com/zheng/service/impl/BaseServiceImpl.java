@@ -24,6 +24,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
     @Override
     public void delete(Serializable id) {
         logger.debug("delete object which id is {}", id);
+        getRepository().delete(id);
     }
 
     @Override

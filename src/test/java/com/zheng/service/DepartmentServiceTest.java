@@ -5,6 +5,8 @@ import com.zheng.domain.Employee;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/3/14.
  */
@@ -34,11 +36,15 @@ public class DepartmentServiceTest extends BaseServiceTest {
     @Test
     public void get() {
         Department department = departmentService.get(3L);
-        System.out.println(1);
+        System.out.println(department);
+        List<Employee> employees = department.getEmployees();
+        for(Employee employee : employees) {
+            System.out.println(employee);
+        }
     }
     
     @Test
     public void delete() {
-        
+        departmentService.delete(18L);
     }
 }
