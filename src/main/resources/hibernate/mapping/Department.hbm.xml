@@ -10,7 +10,7 @@
 
 		<property name="name"/>
 
-		<bag name="employees" cascade="delete" inverse="true">
+		<bag name="employees">
 			<key column="dept_id"/>
 			<one-to-many class="Employee"/>
 		</bag>

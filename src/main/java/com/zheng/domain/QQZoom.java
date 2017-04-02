@@ -57,7 +57,7 @@ public class QQZoom {
 
         QQZoom other = (QQZoom) obj;
 
-        return new EqualsBuilder().append(this.name, other.name).build();
+        return new EqualsBuilder().append(this.name, other.getName()).build();
     }
 
     @Override

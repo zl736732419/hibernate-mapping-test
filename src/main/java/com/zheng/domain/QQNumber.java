@@ -57,7 +57,7 @@ public class QQNumber {
 
         QQNumber other = (QQNumber) obj;
 
-        return new EqualsBuilder().append(this.numbers, other.numbers).build();
+        return new EqualsBuilder().append(this.numbers, other.getNumbers()).build();
     }
 
     @Override

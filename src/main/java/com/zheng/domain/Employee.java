@@ -67,7 +67,7 @@ public class Employee {
 
         Employee other = (Employee) obj;
 
-        return new EqualsBuilder().append(this.name, other.name).append(this.age, other.age).build();
+        return new EqualsBuilder().append(this.name, other.getName()).append(this.age, other.getAge()).build();
     }
 
     @Override

@@ -12,7 +12,10 @@ public interface BaseRepository<T> {
     void save(T t);
 
     void delete(Serializable id);
+    void delete(T t);
 
+    void update(T t);
+    
     T get(Serializable id);
 
     void executeHQL(String hql, Object... args);

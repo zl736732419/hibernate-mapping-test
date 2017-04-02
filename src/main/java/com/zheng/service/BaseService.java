@@ -8,5 +8,7 @@ import java.io.Serializable;
 public interface BaseService<T> {
     void save(T t);
     void delete(Serializable id);
+    void delete(T t);
+    void update(T t);
     T get(Serializable id);
 }

@@ -60,7 +60,7 @@ public class Department {
         }
 
         Department other = (Department) obj;
-        return new EqualsBuilder().append(this.name, other.name).build();
+        return new EqualsBuilder().append(this.name, other.getName()).build();
     }
 
     @Override

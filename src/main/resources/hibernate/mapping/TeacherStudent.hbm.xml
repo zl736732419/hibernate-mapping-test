@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.zheng.domain">
+	<class name="TeacherStudent" table="t_teacher_student_2">
+		<id name="id">
+			<generator class="identity" />
+		</id>
+		<property name="subject" column="subject" />
+		
+		<many-to-one name="teacher" column="teacher_id" cascade="save-update"/>
+		<many-to-one name="student" column="student_id" cascade="save-update"/>
+	</class>
+
+</hibernate-mapping>

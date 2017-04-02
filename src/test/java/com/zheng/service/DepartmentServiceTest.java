@@ -14,6 +14,8 @@ public class DepartmentServiceTest extends BaseServiceTest {
     
     @Autowired
     private DepartmentService departmentService;
+    @Autowired
+    private EmployeeService employeeService;
     
     @Test
     public void save() {
@@ -44,7 +46,37 @@ public class DepartmentServiceTest extends BaseServiceTest {
     }
     
     @Test
+    public void saveDepartmentWithEmployee() {
+        Department department = new Department("男生公寓");
+        
+        Employee employee = new Employee("小张", 20);
+        employee.setDepartment(department);
+        department.getEmployees().add(employee);
+        
+        employee = new Employee("小李", 20);
+        department.getEmployees().add(employee);
+        employee.setDepartment(department);
+        
+        departmentService.save(department);
+    }
+    
+    @Test
+    public void testDefaultBehavior() {
+        Department department = new Department("女生公寓");
+        Employee employee = employeeService.get(1L);
+        department.getEmployees().add(employee);
+        employee.setDepartment(department);
+        employee = employeeService.get(2L);
+        department.getEmployees().add(employee);
+        employee.setDepartment(department);
+        
+        departmentService.save(department);
+    }
+    
+    @Test
     public void delete() {
-        departmentService.delete(18L);
+        // 报错，在没有指定delete-orphan/delete/all-delete-orphan的情况下
+        // 要么把关系维护端指向自己，要么手动解除绑定
+        departmentService.delete(6L);
     }
 }

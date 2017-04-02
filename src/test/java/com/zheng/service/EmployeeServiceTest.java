@@ -26,6 +26,6 @@ public class EmployeeServiceTest extends BaseServiceTest {
     
     @Test
     public void delete() {
-        employeeService.delete(19L);
+        employeeService.delete(12L);
     }
 }

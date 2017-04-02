@@ -51,6 +51,16 @@ public abstract class BaseRepositoryImpl<T> extends HibernateDaoSupport implemen
     }
 
     @Override
+    public void delete(T t) {
+        this.getHibernateTemplate().delete(t);
+    }
+
+    @Override
+    public void update(T t) {
+        this.getHibernateTemplate().update(t);
+    }
+
+    @Override
     public T get(Serializable id) {
         return this.getHibernateTemplate().load(entityCls, id);
     }

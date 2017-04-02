@@ -9,7 +9,7 @@
 		</id>
 		<property name="name"/>
 		<property name="age" />
-		<many-to-one name="department" column="dept_id" cascade="save-update"/>
+		<many-to-one name="department" cascade="save-update" column="dept_id"/>
 	</class>
 
 </hibernate-mapping>
